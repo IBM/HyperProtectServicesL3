@@ -654,10 +654,11 @@
 <p>Once complete, the Terminal console will report back with a <code>RepoDigests</code> value. <strong>COPY</strong> this value to a clipboard and save it for reference later.</p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure15.png" width="400" /></p>
 <ol start="13">
-<li>If you need to retrieve the digest value at a later time, you can do so by executing the following command. Do so now and also record the <strong>FULL</strong> print-out to a notepad. The information on your container registry will be useful at a later stage.</li>
+<li>If you need to retrieve the digest value at a later time, you can do so by executing the following command:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker inspect us.icr.io/hpvs-sample/paynow-website | grep -A 1 RepoDigests
 </code></pre></div>
+<p>Record the <strong>FULL</strong> print-out to a notepad. The information on your container registry will be useful at a later stage.</p>
 <hr />
 <h1 id="_1"></h1>
 <h1 id="next-steps">Next Steps</h1>

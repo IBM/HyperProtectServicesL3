@@ -650,10 +650,13 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>docker push us.icr.io/hpvs-sample/paynow-website
 </code></pre></div>
 <hr />
-<p>Wait until all of the components have successfully been pushed to the IBM Cloud repository.</p>
-<p>Once complete, the Terminal console will report back with a <code>RepoDigests</code> value. <strong>COPY</strong> this value to a clipboard and save it for reference later.</p>
-<p><img alt="" loading="lazy" src="../_attachments/module2_figure15.png" width="400" /></p>
 <ol start="13">
+<li>Wait until all of the components have successfully been pushed to the IBM Cloud repository.</li>
+</ol>
+<p><img alt="" loading="lazy" src="../_attachments/module2_figure15.png" width="400" /></p>
+<p>Once complete, the Terminal console will report back with a <code>RepoDigests</code> value. <strong>COPY</strong> this value to a clipboard and save it for reference later.</p>
+<hr />
+<ol start="14">
 <li>If you need to retrieve the digest value at a later time, you can do so by executing the following command:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker inspect us.icr.io/hpvs-sample/paynow-website | grep -A 1 RepoDigests

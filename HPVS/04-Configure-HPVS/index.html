@@ -198,7 +198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../evaluation/" class="md-nav__link">
+      <a href="../../Evaluation.md" class="md-nav__link">
         Evaluation
       </a>
     </li>
@@ -468,7 +468,7 @@
 <ol start="4">
 <li>The instructions that follow will guide you, top to bottom, across each of the configuration fields available for <code>Virtual Server Instances for VPC</code>.</li>
 </ol>
-<div class="admonition tip">
+<div class="admonition note">
 <p class="admonition-title">IBM CLOUD IS CONTINUOUSLY UPDATING</p>
 <p>Be aware that the IBM Cloud interface is continuously evolving and updating; it may be the case that the order of these options, or the exact specifications/fields that they offer, may differ slightly from the lab guide instructions or accompanying video recordings.</p>
 </div>
@@ -545,8 +545,10 @@
 <p><strong>IBM sellers and technical sellers</strong>, who are required to produce a Stand &amp; Deliver recording of the hands-on demonstration as part of their accreditation process, you will NOT be required to show (on screen) anything beyond the initial configuration steps for Hyper Protect Virtual Servers for VPC on IBM Cloud. Do not deploy the instance, unless you are prepared to finance it on your personal IBM Cloud account. Furthermore, you are not required to record any of the steps involving the hypothetical PayNow application, as doing so would require deployment of a live instance.</p>
 <p><strong>IBM business partners</strong>, who receive accreditation via a passing grade on a multiple-choice test, will only need to answer questions based on the initial configuration steps of Hyper Protect Virtual Servers for VPC on IBM Cloud. Quiz questions will not cover the screen readouts or other material involving either the PayNow application or a fully deployed instance. As mentioned previously, do not deploy the IBM Cloud instance into a live state unless you are prepared to self-finance any potential billing on your personal IBM Cloud account.</p>
 </div>
+<hr />
 <h1 id="_1"></h1>
 <h1 id="optional-it-is-recommended-that-you-follow-along-and-read-the-instructions-given-below-but-due-to-the-potential-cost-obligations-it-is-not-required-that-you-perform-these-tasks-yourself-unless-you-are-willing-to-incur-the-expenses-to-your-personal-ibm-cloud-account"><strong>Optional</strong>: It is recommended that you follow along and read the instructions given below. But due to the potential cost obligations, it is not required that you perform these tasks yourself — unless you are willing to incur the expenses to your personal IBM Cloud account.</h1>
+<hr />
 <ol start="6">
 <li>If you do create an instance (using the <code>Create Virtual Server</code> button) at this point, the IBM Cloud dashboard will automatically redirect back to the <code>Virtual Server Instances for VPC</code> dashboard, where you can watch the progress of the VPC instance as it provisions.</li>
 </ol>
@@ -589,20 +591,22 @@
 </ol>
 <p><img alt="" src="../_attachments/module2_figure8.png" /></p>
 <hr />
-<p>Open a new web browser and into the address field enter:</p>
+<ol start="15">
+<li>Open a new web browser and into the address field enter:</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://FLOATING_IP_ADDRESS:8443
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">ADDRESS AND PORT</p>
-<p>Note that <code>:8443</code> denotes the port address of the PayNow application. Replace the <code>FLOATING_IP_ADDRESS</code> characters with the value unique to your environment.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">WARNING</p>
+<p>Note that <code>:8443</code> denotes the port address of the PayNow application. <strong>Replace</strong> the <code>FLOATING_IP_ADDRESS</code> characters with the value unique to <em>your</em> environment.</p>
+<details class="warning">
+<summary>WARNINGS ABOUT <em>POTENTIAL SECURITY RISK AHEAD</em></summary>
 <p>You may receive a warning error about a <em>Potential Security Risk Ahead</em>, an <em>Unsecured Website</em>, or so on. You can safely ignore this error and proceed to the web page.</p>
-</div>
-<hr />
+</details>
 <p>Your web browser will now open to the hosted <strong>PayNow</strong> application web portal.</p>
 <p><img alt="" src="../_attachments/module2_figure9.png" /></p>
+<hr />
+<p>Congratulations! That concludes the hands-on components to this Level 3 course.</p>
+<p>IBM sellers and business partners are invited at this time to follow the <a href="https://ibm.github.io/HyperProtectServicesL3/Evaluation/" target="_blank">Level 3 accreditation</a> steps (depending on your role).</p>
+<p>As a reminder, accreditation criteria— whether you are recording a Stand &amp; Deliver (IBM sellers) or taking a multiple-choice evaluation quiz (business partners) —will cover material within both <a href="https://ibm.github.io/HyperProtectServicesL3/HPCS/01-Introduction-to-HPCS-and-UKO/" target="_blank">Module 1 - HPCS</a> <strong>AND</strong> <a href="https://ibm.github.io/HyperProtectServicesL3/HPVS/01-Introduction-to-HPVS/" target="_blank">Module 2 - HPVS</a>. Ensure that you have fully completed both sections before pursuing a Level 3 accreditation.</p>
 
 
 

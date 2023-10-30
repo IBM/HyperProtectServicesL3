@@ -1,0 +1,647 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM Cloud Hyper Protect Services Level 3 for Technical Sales">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Generating a unique key with the AWS Keystore - IBM Cloud Hyper Protect Services Level 3 for Technical Sales</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generating-a-unique-key-with-the-aws-keystore" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" class="md-header__button md-logo" aria-label="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM Cloud Hyper Protect Services Level 3 for Technical Sales
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Generating a unique key with the AWS Keystore
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" class="md-nav__button md-logo" aria-label="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM Cloud Hyper Protect Services Level 3 for Technical Sales
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluation/" class="md-nav__link">
+        Evaluation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Module 1 - IBM Cloud Hyper Protect Crypto Services (HPCS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Module 1 - IBM Cloud Hyper Protect Crypto Services (HPCS)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Module 1 - IBM Cloud Hyper Protect Crypto Services (HPCS)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-Introduction-to-HPCS-and-UKO/" class="md-nav__link">
+        Introduction to HPCS and UKO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-Provision-and-access/" class="md-nav__link">
+        Provision and access an IBM Technology Zone environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Generating a unique key with the AWS Keystore
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-Digitally-shred/" class="md-nav__link">
+        Digitally shred AWS S3 objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-Clean-up/" class="md-nav__link">
+        Clean up and conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Module 2 - IBM Cloud Hyper Protect Virtual Servers (HPVS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Module 2 - IBM Cloud Hyper Protect Virtual Servers (HPVS)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Module 2 - IBM Cloud Hyper Protect Virtual Servers (HPVS)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/01-Introduction-to-HPVS/" class="md-nav__link">
+        Introduction to HPVS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/02-Prerequites-and-Preparation/" class="md-nav__link">
+        Prerequisites and Preparation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/03-Contract-Creation/" class="md-nav__link">
+        Creation of a Contract for PayNow Application via Terraform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/04-Configure-HPVS/" class="md-nav__link">
+        Configuration of a Hyper Protect Virtual Servers for VPC Instance on IBM Cloud
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="generating-a-unique-key-with-the-aws-keystore">Generating a unique key with the AWS Keystore</h1>
+<hr />
+<p>Previously, we provisioned and inspected encryption keys in AWS that were generated ahead of time by IBM Technology Zone. In the following section, you will generate an encryption key that can be later be used for managing resources accessed within the AWS environment.</p>
+<ol>
+<li>Return to the <strong>IBM Cloud dashboard</strong> and drill down into <strong>Resource List</strong> &gt; <strong>Security</strong>, then click the name of the <code>Hyper Protect Crypto Services-Techzone</code> instance.</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure8.png" /></p>
+<hr />
+<ol start="2">
+<li>The browser will redirect to a management panel for the HPCS instance. From the left-hand side of the interface, drill down into <strong>Vaults</strong> &gt; <strong>Managed Keys</strong> and take note of the inventory of keys available. Two keys should be listed: <code>TechZone-UKO-Key</code> and <code>UKO-Azure-Test-Key</code>.</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure13.png" /></p>
+<hr />
+<ol start="3">
+<li>Along the top-right corner of the <strong>Managed Keys</strong> table, locate and click the blue <strong>Create Key +</strong> button, as shown.</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure14.png" /></p>
+<hr />
+<div class="admonition warning">
+<p class="admonition-title">SHARED ENVIRONMENT<p>When selecting a <code>Name</code> for your key, be aware that other sellers and business partners enrolled in this Level 3 course will be able to see keys created in the shared HPCS environment. Do not use the names of clients or other confidential information as part of your key definition.</p>
+</p>
+</div>
+<p>You will be asked to supply the following information as part of the key definition:</p>
+<ul>
+<li>
+<p>Specify the <strong>Target Vault</strong>: <code>Tech Zone Vault</code></p>
+</li>
+<li>
+<p>Specify the <strong>Keystore Type</strong>: <code>AWS Key Management Service</code></p>
+</li>
+<li>
+<p>Specify the <strong>Key Properties</strong>, which include: a unique <code>Name</code>; <code>State: Active</code>; and <code>Expiration Date</code> set three days into the future.</p>
+</li>
+<li>
+<p>Specify the <strong>Target Keystore</strong>: <code>AWS Tech Zone</code></p>
+</li>
+</ul>
+<p>Under the <strong>Summary</strong> tab, review the selections and when satisfied click the <strong>Create Key</strong> button.</p>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure15.png" /></p>
+<hr />
+<h1 id="_1"></h1>
+<h1 id="validate-encryption-key-generation-on-aws">Validate encryption key generation on AWS</h1>
+<ol start="4">
+<li>
+<p>Return to the AWS dashboard and open the <strong>Key Management Service (KMS)</strong> panel as before. From the left-side of the interface, drill down into the <strong>Customer-managed keys</strong> section.</p>
+</li>
+<li>
+<p>Examine the contents and look for the uniquely generated key that you created using the Unified Key Orchestrator (UKO) in Step 3.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">MISSING KEY</p>
+<p>If the key is not displayed, verify once again that your AWS dashboard is set to the <code>US East (N. Virginia)</code> region using the drop-down in the top-right corner of the interface.</p>
+</div>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure16.png" /></p>
+<hr />
+<h1 id="_2"></h1>
+<h1 id="test-the-key-by-encrypting-aws-s3-bucket-contents">Test the key by encrypting AWS S3 bucket contents</h1>
+<ol start="6">
+<li>
+<p>Locate the search bar at the top of the AWS dashboard. Search for <code>s3</code> and click on the <strong>AWS S3</strong> service result.</p>
+</li>
+<li>
+<p>Wait for the AWS S3 dashboard to load. From the left-hand side of the interface, drill down into <strong>Buckets</strong> and then click the orange <strong>Create Bucket</strong> button as shown.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure17.png" /></p>
+<hr />
+<p>Provide the following details as you create a new S3 bucket:</p>
+<ul>
+<li>
+<p><strong>Name</strong>: Set to a unique identifier of your choosing.</p>
+</li>
+<li>
+<p><strong>Region</strong>: Set to <code>US East (N. Virginia)</code> to match the region where your encryption key is located.</p>
+</li>
+<li>
+<p>Leave the <strong>ACLs</strong> and <strong>Bucket Versioning</strong> fields as <code>Disabled</code>.</p>
+</li>
+<li>
+<p><strong>Encryption</strong> set to <code>ENABLED</code> with the <code>AWS Key Management Service Key (SSE-KMS)</code> option selected.</p>
+</li>
+<li>
+<p>Select the <strong>Choose from your AWS KMS keys</strong> option and specify the unique key generated in <code>Step 5</code> from the dropdown menu. <em>Note:</em> The key will need to be identified by the <code>KeyID</code> field (found within the KMS Console in AWS); it will not be listed under the <code>Name</code> identifier you assigned upon key generation.</p>
+</li>
+</ul>
+<p>Review the selections made and when satisfied click the <strong>Create Bucket</strong> option to continue.</p>
+<hr />
+<ol start="8">
+<li>
+<p>After creating the S3 bucket, the web browser will redirect back to the <strong>AWS S3</strong> dashboard. Scroll down the page until you reach <strong>Buckets</strong> table and locate the newly-created bucket in the list. Click the name of the bucket to drill down further.</p>
+</li>
+<li>
+<p>With the bucket selected, click the orange <strong>Upload</strong> button and select a small file from your machine (one of the L3 lab documents, for example) to upload. No sensitive or confidential information, please. Wait for the asset to upload and be listed as an <strong>Object</strong> within the bucket.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure18.png" /></p>
+<hr />
+<ol start="10">
+<li>
+<p>Click on the file name to see the object properties.</p>
+</li>
+<li>
+<p>To ensure that the file was properly uploaded and available for download, click on the <strong>Download</strong> button in the top-right corner of the interface. Open the file on your desktop to verify its integrity.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure19.png" /></p>
+<hr />
+<h1 id="_3"></h1>
+<h1 id="next-steps">Next steps</h1>
+<p>With the AWS S3 bucket and encryption key now prepared, we will demonstrate how to digitally shred objects within AWS S3 using the HPCS Unified Key Orchestrator (UKO).</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../02-Provision-and-access/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Provision and access an IBM Technology Zone environment" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Provision and access an IBM Technology Zone environment
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../04-Digitally-shred/" class="md-footer__link md-footer__link--next" aria-label="Next: Digitally shred AWS S3 objects" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Digitally shred AWS S3 objects
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>

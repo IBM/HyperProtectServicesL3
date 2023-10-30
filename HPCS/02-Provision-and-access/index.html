@@ -1,0 +1,667 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM Cloud Hyper Protect Services Level 3 for Technical Sales">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Provision and access an IBM Technology Zone environment - IBM Cloud Hyper Protect Services Level 3 for Technical Sales</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#provisioning-an-ibm-technology-zone-environment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" class="md-header__button md-logo" aria-label="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM Cloud Hyper Protect Services Level 3 for Technical Sales
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Provision and access an IBM Technology Zone environment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" class="md-nav__button md-logo" aria-label="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM Cloud Hyper Protect Services Level 3 for Technical Sales
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluation/" class="md-nav__link">
+        Evaluation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Module 1 - IBM Cloud Hyper Protect Crypto Services (HPCS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Module 1 - IBM Cloud Hyper Protect Crypto Services (HPCS)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Module 1 - IBM Cloud Hyper Protect Crypto Services (HPCS)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-Introduction-to-HPCS-and-UKO/" class="md-nav__link">
+        Introduction to HPCS and UKO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Provision and access an IBM Technology Zone environment
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Create-a-key/" class="md-nav__link">
+        Generating a unique key with the AWS Keystore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-Digitally-shred/" class="md-nav__link">
+        Digitally shred AWS S3 objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-Clean-up/" class="md-nav__link">
+        Clean up and conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Module 2 - IBM Cloud Hyper Protect Virtual Servers (HPVS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Module 2 - IBM Cloud Hyper Protect Virtual Servers (HPVS)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Module 2 - IBM Cloud Hyper Protect Virtual Servers (HPVS)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/01-Introduction-to-HPVS/" class="md-nav__link">
+        Introduction to HPVS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/02-Prerequites-and-Preparation/" class="md-nav__link">
+        Prerequisites and Preparation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/03-Contract-Creation/" class="md-nav__link">
+        Creation of a Contract for PayNow Application via Terraform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/04-Configure-HPVS/" class="md-nav__link">
+        Configuration of a Hyper Protect Virtual Servers for VPC Instance on IBM Cloud
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="provisioning-an-ibm-technology-zone-environment">Provisioning an IBM Technology Zone environment</h1>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">IBM TECHNOLOGY ZONE</p>
+<p>You will require access to the <strong>IBM Technology Zone</strong> in order to reserve your environment and complete the hands-on training. If you do not yet have access or an account with the ITZ, you may register for one by visiting the following page: <a href="https://techzone.ibm.com" target="_blank">https://techzone.ibm.com</a></p>
+</div>
+<p>In this section, you will provision and request access to an <strong>IBM Technology Zone</strong> (ITZ) environment where <strong>Hyper Protect Crypto Services</strong> (HPCS) and <strong>Unified Key Orchestrator</strong> (UKO) have been preconfigured for demonstration purposes. The keystores associated with this ITZ environment have already been linked to specific accounts that IBM administrates in Amazon Web Services (AWS) and Microsoft Azure public clouds.</p>
+<p>The hands-on environment can be provisioned free-of-charge using the reservation portal: <strong><a href="https://techzone.ibm.com/collection/use-the-unified-key-orchestrator-uko-to-orchestrate-keys-across-aws-andor-azure/environments" target="_blank">https://techzone.ibm.com/collection/use-the-unified-key-orchestrator-uko-to-orchestrate-keys-across-aws-andor-azure/environments</a></strong></p>
+<hr />
+<div class="admonition warning">
+<p class="admonition-title">MULTIPLE ENVIRONMENT TEMPLATES</p>
+<p>ITZ will display two configurations to choose from. You will need to provision <strong>both</strong> the <code>IBM Cloud HPCS</code> and <code>AWS Account Access</code> tiles. The following instructions will guide you through how to do this.</p>
+</div>
+<p><img alt="" src="../_attachments/module1_figure2.png" /></p>
+<hr />
+<ol>
+<li>
+<p>Select the <code>Access to IBM Cloud HPCS</code> tile by clicking the blue <strong>Reserve</strong> icon.</p>
+</li>
+<li>
+<p>You may select the option to <em>Reserve now</em> (recommended) or <em>Schedule for later</em>.</p>
+</li>
+<li>
+<p>In order to complete your ITZ reservation of the HPCS environment, you must supply the following information:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><strong>Name</strong>: Give your reservation a unique name.</p>
+</li>
+<li>
+<p><strong>Purpose</strong>: Set to <em>Practice / Self-Education</em> and affirm that the environment will not be used with customer data. If you are replicating this hands-on demonstration with a client, you must select <em>Customer Demo</em> and supply a sales opportunity number.</p>
+</li>
+<li>
+<p><strong>Purpose Description</strong>: Provide a brief summary of how the environment will be used.</p>
+</li>
+<li>
+<p><strong>Preferred Geography</strong>: <em>US-East (VPC)</em></p>
+</li>
+<li>
+<p><strong>End Date &amp; Time</strong>: Select a time and date for when the reservation will expire. The recommended amount is 2 days, although it is possible to finish the hands-on demonstration within a few hours.</p>
+</li>
+</ul>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure4.png" /></p>
+<hr />
+<ol start="4">
+<li>
+<p>When satisfied, verify that you agree to the <em>Terms and Conditions</em> for the environment and finalize your reservation request by clicking <strong>Submit</strong>.</p>
+</li>
+<li>
+<p>Reservations take approximately <strong>15-20 minutes</strong> to complete from the time that you click submit. If you navigate to the <a href="https://techzone.ibm.com/my/reservations" target="_blank"><strong>My Reservations</strong></a> tab of the ITZ, you can monitor the progress of your reservation.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">WAIT UNTIL READY</p>
+<p>Wait for the ITZ reservation to be marked as "<em>Ready</em>" before attempting to start the lab — accessing it too soon will lead to issues (or an outright failure) when connecting to the HPCS instance.</p>
+</div>
+<ol start="6">
+<li>
+<p>You will also receive an email to your inbox once the environment has successfully deployed. The <strong>"Your environment is ready"</strong> email contains links back to the <strong><a href="https://techzone.ibm.com/my/reservations" target="_blank">My Reservations</a></strong> tab, which now is populated with all of the details needed to access your IBM Cloud HPCS environment.</p>
+</li>
+<li>
+<p>Repeat the same reservation <strong>Steps 2 through 6</strong> for the <code>AWS Account Access</code> instance. You will need to wait for both instances (IBM HPCS and AWS) to finish provisioning through the <a href="https://techzone.ibm.com/my/reservations" target="_blank"><strong>My Reservations</strong></a> tab of the ITZ before continuing with the lab.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure5.png" /></p>
+<hr />
+<h1 id="_1"></h1>
+<h1 id="accessing-the-hpcs-and-aws-environments">Accessing the HPCS and AWS environments</h1>
+<ol start="8">
+<li>For the <strong>IBM Cloud HPCS</strong> environment, you will receive an email (see Step 6) with an invitation to connect your personal IBM Cloud account to an <code>ITZ V2</code> account, as shown in the following screenshot. You must <strong>ACCEPT</strong> the invitation by clicking the <strong>Join Now</strong> button in the email.</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure6.png" /></p>
+<hr />
+<ol start="9">
+<li>
+<p>A web browser will open and direct you to log in to your IBM Cloud account. Proceed and then accept the <code>ITZ V2</code> invitation when prompted to do so.</p>
+</li>
+<li>
+<p>Once authenticated and logged in, look for a drop-down in the top-right corner of the IBM Cloud interface and click it to toggle between different Organizations / Resource Groups. You should see <code>ITZ V2</code> listed, potentially alongside multiple others. Click the <code>ITZ V2</code> group and wait for the browser to refresh.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure7.png" /></p>
+<hr />
+<ol start="11">
+<li>From the left-hand interface, click the <strong>Resource List</strong> icon (three stacked and bulleted lines) and drill down in the <strong>Security</strong> row. You should see an HPCS instance similar to the one shown in the following screenshot.</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure8.png" /></p>
+<hr />
+<ol start="12">
+<li>For retrieving the <strong>AWS Account Access</strong> that was requested in Step 7, return to your email inbox and look for an email stating that the AWS environment is ready (similar to the screenshot provided below). Record the <code>AWS Access Group</code>, <code>AWS SSO User Portal URL</code>, and <code>Desktop</code> details provided in the note. Alternatively, you can always retrieve this information from the <a href="https://techzone.ibm.com/my/reservations" target="_blank"><strong>My Reservations</strong></a> tab of the ITZ.</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure9.png" /></p>
+<hr />
+<ol start="13">
+<li>
+<p>Click the <strong>Desktop</strong> link in the email or navigate to <strong><a href="https://techzone.awsapps.com/start" target="_blank">https://techzone.awsapps.com/start</a></strong> to get started.</p>
+</li>
+<li>
+<p>When prompted, authenticate using your personal IBMid to continue to the AWS dashboard, as shown below.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure10.png" /></p>
+<hr />
+<ol start="15">
+<li>Click on the <code>AWS Account (1)</code> tile and drill down into the <strong>UKO User Management Console</strong>, which will redirect the web browser to a page resembling the following screenshot.</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure11.png" /></p>
+<hr />
+<ol start="16">
+<li>
+<p>Under the <strong>Console Home</strong> panel, multiple links are provided: <code>Key Management Service</code>, <code>IAM</code>, <code>AWS Budgets</code>, <code>AWS Organizations</code>, and so on. Select the <strong>Key Management Service</strong> link.</p>
+</li>
+<li>
+<p>From the drop-down in the top-right corner of the AWS dashboard, ensure that the <strong>US East (N. Virginia)</strong> region is selected. It should be set as such by default, but if it has been configured to something else, set it back to US East.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure12.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">CAUTION</p>
+<p><strong>Do not modify or delete this key.</strong> If the key does not appear, verify that the <code>US East (N. Virginia)</code> region was selected in Step 17. If the key is still missing, reach out to the author of this documentation.</p>
+</div>
+<hr />
+<ol start="18">
+<li>Drill down into <strong>Key Management Service</strong> &gt; <strong>Customer-managed keys</strong>: confirm that under the <em>Aliases</em> column is a key labelled <code>TechZone-UKO-Key</code>.</li>
+</ol>
+<hr />
+<h1 id="_2"></h1>
+<h1 id="next-steps">Next steps</h1>
+<p>Now that you have successfully provisioned and gained access to both IBM Cloud HPCS and AWS Key Management Service, we will next go ahead with generating your own key in AWS Keystore.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../01-Introduction-to-HPCS-and-UKO/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction to HPCS and UKO" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction to HPCS and UKO
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../03-Create-a-key/" class="md-footer__link md-footer__link--next" aria-label="Next: Generating a unique key with the AWS Keystore" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Generating a unique key with the AWS Keystore
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>

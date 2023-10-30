@@ -1,0 +1,582 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM Cloud Hyper Protect Services Level 3 for Technical Sales">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Introduction to HPCS and UKO - IBM Cloud Hyper Protect Services Level 3 for Technical Sales</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ibm-cloud-hyper-protect-crypto-services-and-unified-key-orchestrator" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" class="md-header__button md-logo" aria-label="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM Cloud Hyper Protect Services Level 3 for Technical Sales
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to HPCS and UKO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" class="md-nav__button md-logo" aria-label="IBM Cloud Hyper Protect Services Level 3 for Technical Sales" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM Cloud Hyper Protect Services Level 3 for Technical Sales
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluation/" class="md-nav__link">
+        Evaluation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Module 1 - IBM Cloud Hyper Protect Crypto Services (HPCS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Module 1 - IBM Cloud Hyper Protect Crypto Services (HPCS)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Module 1 - IBM Cloud Hyper Protect Crypto Services (HPCS)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Introduction to HPCS and UKO
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-Provision-and-access/" class="md-nav__link">
+        Provision and access an IBM Technology Zone environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Create-a-key/" class="md-nav__link">
+        Generating a unique key with the AWS Keystore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-Digitally-shred/" class="md-nav__link">
+        Digitally shred AWS S3 objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-Clean-up/" class="md-nav__link">
+        Clean up and conclusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Module 2 - IBM Cloud Hyper Protect Virtual Servers (HPVS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Module 2 - IBM Cloud Hyper Protect Virtual Servers (HPVS)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Module 2 - IBM Cloud Hyper Protect Virtual Servers (HPVS)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/01-Introduction-to-HPVS/" class="md-nav__link">
+        Introduction to HPVS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/02-Prerequites-and-Preparation/" class="md-nav__link">
+        Prerequisites and Preparation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/03-Contract-Creation/" class="md-nav__link">
+        Creation of a Contract for PayNow Application via Terraform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPVS/04-Configure-HPVS/" class="md-nav__link">
+        Configuration of a Hyper Protect Virtual Servers for VPC Instance on IBM Cloud
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="ibm-cloud-hyper-protect-crypto-services-and-unified-key-orchestrator">IBM Cloud Hyper Protect Crypto Services <br>and Unified Key Orchestrator</h1>
+<hr />
+<p><div class="video-container"><iframe src="../_videos/hpcs.mp4" style="position: relative; width: 100%; height: 22.172vw" frameborder="0" allowfullscreen></iframe></div></p>
+<div class="admonition tip">
+<p class="admonition-title">WATCH THIS DEMONSTRATION</p>
+<p><strong>Louisa Muschal</strong> <em>(Product Manager, IBM Hyper Protect Services - GTM)</em> explains the value of IBM Cloud Hyper Protect Crypto Services and sets the stage for the hands-on work of this module.</p>
+<p>Additional ways to watch: <a href="https://ibm.seismic.com/Link/Content/DCC3RjRdb2VVJ8cVfhpmTXJ84XTB" target="_blank">Seismic replay available for download.</a></p>
+</div>
+<hr />
+<p>Welcome to the <strong>IBM Cloud Hyper Protect Crypto Services</strong> hands-on demonstration, where sellers and business partners will have the opportunity to test the functionality of the <strong>Unified Key Orchestrator</strong> across IBM Cloud and AWS environments.</p>
+<p><code>IBM Cloud Hyper Protect Crypto Services</code> (<strong>HPCS</strong>) provides data encryption that’s protected by a dedicated cloud hardware security module and enables multicloud key management. UKO, a component of HPCS, is what enables key orchestration across these multicloud environments. HPCS is built on <a href="https://csrc.nist.gov/projects/cryptographic-module-validation-program/Certificate/3410" target="_blank">FIPS 140-2 Level 4</a> certified hardware, the highest level in the industry.</p>
+<p><code>Unified Key Orchestrator</code> (<strong>UKO</strong>) is a multi-cloud key management solution offered as a managed service on IBM Cloud. Built on ‘Keep Your Own Key’ (KYOK), UKO helps enterprises manage their data encryption keys over multiple key stores and across multiple clouds environments. These key environments include managed on-premises stores and keys on IBM Cloud, AWS, and Microsoft Azure. UKO manages and orchestrates these security policies from a single point of control.</p>
+<div class="admonition note">
+<p class="admonition-title">BRING YOUR OWN KEY vs. KEEP YOUR OWN KEY</p>
+<p>How does the "Keep Your Own Key" (KYOK) approach of UKO differ from "Bring Your Own Key" (BYOK)?</p>
+<ul>
+<li>
+<p><strong>BYOK</strong> is a way for clients to use their own keys to encrypt data. Key management services that provide BYOK are typically multi-tenant services. With these services, users can import encryption keys from on-premises hardware security modules (HSM) and then manage the keys.</p>
+</li>
+<li>
+<p><strong>KYOK</strong> includes all of the capabilities of BYOK, but also provides technical assurances that IBM cannot access a client's keys. With KYOK, clients have exclusive control of the entire key hierarchy, including that of the master key.</p>
+</li>
+</ul>
+</div>
+<p>The following table provides further details on the differences between BYOK and KYOK:</p>
+<hr />
+<p><img alt="" src="../_attachments/module1_figure1.png" /></p>
+<hr />
+<h1 id="_1"></h1>
+<h1 id="key-benefits-to-hpcs-clients">Key benefits to HPCS clients</h1>
+<ul>
+<li>
+<p><strong>Lifecycle management for keys</strong>: A GUI and a REST API track keys as they progress. Deleted data is no longer retrievable, regardless of the application that stored it. <a href="https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-key-states&_gl=1*14u3d9u*_ga*MTY1MTIxMjE0OS4xNjg1NjQ2OTQ2*_ga_FYECCCS21D*MTY5MDkyNzA2MC4yNy4wLjE2OTA5MjcwNjAuMC4wLjA" target="_blank">Learn more.</a></p>
+</li>
+<li>
+<p><strong>Encryption for IBM Cloud services</strong>: IBM Cloud services can integrate with this product. Clients receive a common-key-provider API for a consistent approach in IBM Cloud adoption. <a href="https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-integrate-services&_gl=1*z4fp1c*_ga*MTY1MTIxMjE0OS4xNjg1NjQ2OTQ2*_ga_FYECCCS21D*MTY5MDkyNzA2MC4yNy4xLjE2OTA5Mjc2OTkuMC4wLjA" target="_blank">Learn more.</a></p>
+</li>
+<li>
+<p><strong>Multicloud key management</strong>: Extend protection across cloud deployments. Manage all keys in one place, with added protection and simplicity. <a href="https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-introduce-uko&_gl=1*z4fp1c*_ga*MTY1MTIxMjE0OS4xNjg1NjQ2OTQ2*_ga_FYECCCS21D*MTY5MDkyNzA2MC4yNy4xLjE2OTA5Mjc2OTkuMC4wLjA" target="_blank">Learn more.</a></p>
+</li>
+<li>
+<p><strong>Security certification</strong>: The service is built on FIPS 140-2 Level-4-certified hardware—the highest offered by any cloud provider in the industry. <a href="https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-security-and-compliance&_gl=1*7efpsq*_ga*MTY1MTIxMjE0OS4xNjg1NjQ2OTQ2*_ga_FYECCCS21D*MTY5MDkyNzA2MC4yNy4xLjE2OTA5Mjc2OTkuMC4wLjA" target="_blank">Learn more.</a></p>
+</li>
+<li>
+<p><strong>HSM control</strong>: Single-tenant, dedicated HSMs are controlled by you. IBM Cloud administrators have no access. <a href="https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-introduce-cloud-hsm&_gl=1*7efpsq*_ga*MTY1MTIxMjE0OS4xNjg1NjQ2OTQ2*_ga_FYECCCS21D*MTY5MDkyNzA2MC4yNy4xLjE2OTA5Mjc2OTkuMC4wLjA" target="_blank">Learn more.</a></p>
+</li>
+<li>
+<p><strong>Key ceremony</strong>: IBM is the first to provide cloud command-line interface (smart cards) for the HSM key ceremony. <a href="https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-introduce-service&_gl=1*7efpsq*_ga*MTY1MTIxMjE0OS4xNjg1NjQ2OTQ2*_ga_FYECCCS21D*MTY5MDkyNzA2MC4yNy4xLjE2OTA5Mjc2OTkuMC4wLjA" target="_blank">Learn more.</a></p>
+</li>
+</ul>
+<hr />
+<h1 id="_2"></h1>
+<h1 id="next-steps">Next steps</h1>
+<p>In the following section, you will need to review the pre-requisites and follow the provisioning instructions for setting up your IBM Technology Zone environment.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../evaluation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Evaluation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Evaluation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../02-Provision-and-access/" class="md-footer__link md-footer__link--next" aria-label="Next: Provision and access an IBM Technology Zone environment" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Provision and access an IBM Technology Zone environment
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>

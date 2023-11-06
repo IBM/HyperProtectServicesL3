@@ -479,13 +479,13 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Ingestion Host: syslog-a.eu-gb.logging.cloud.ibm.com
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Ingestion ID: 9a035a6ee2f2ae77c566a543e0957ed8
 </code></pre></div>
-<p>Locate the <code>Ingestion Host</code> and <code>Ingestion ID</code> specific to your environment by performing the following:</p>
+<p>Locate the <code>Ingestion Host</code> and <code>Ingestion ID</code> specific to your environment by performing the following steps:</p>
 <ul>
 <li>
 <p>Click <strong>Open Dashboard</strong> from the Log Analysis service page on IBM Cloud</p>
 </li>
 <li>
-<p>In the bottom-left corner of the dashboard, click the <code>?</code> icon (for <code>Install Instructions</code>).</p>
+<p>In the bottom-left corner of the dashboard, click the circular <code>?</code> icon (for <code>Install Instructions</code>).</p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure18.png" width="400" /></p>
 </li>
 <li>
@@ -585,10 +585,10 @@
 </code></pre></div></p>
 <p>Alternatively, if you visit the <a href="https://github.com/ibm-hyper-protect/paynow-website" target="_blank">GitHub</a> repository, click the green <strong>Code</strong> button and then <strong>Download ZIP</strong> from the drop-down menu. This will download the GitHub repository code to a directory of your choosing on your local machine.</p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure14.png" width="400" /></p>
-<p>The Pay Now Website is a simple application, that presents an interface to make payments. The application shows how sensitive payment related information (such as credit card data) is used. It is recommended to run this application in a confidential computing environment where PII data in use is protected from malicious actors.</p>
+<p>PayNow is a simulated web application that presents an interface for making payments. The application can be used to demonstrate how sensitive payment-related information (such as credit card data) can be secured using HPVS.</p>
 <hr />
 <ol start="7">
-<li>With Terminal, navigate to the <code>paynow-website</code> that you just cloned/saved locally on your machine in the previous step. For example:</li>
+<li>With Terminal, navigate to the <code>paynow-website</code> that you just cloned (saved) locally on your machine in the previous step. For example:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cd ~/Desktop/paynow-website
 </code></pre></div>
@@ -601,11 +601,10 @@
 <li>Install the <strong>IBM Cloud Command Line Interface</strong> (CLI) for your local machine to manage resources in the IBM Cloud. </li>
 </ol>
 <p>Instructions for how to do so across a variety of operating systems are provided online: <a href="https://cloud.ibm.com/docs/cli?topic=cli-install-ibmcloud-cli" target="_blank">https://cloud.ibm.com/docs/cli?topic=cli-install-ibmcloud-cli</a></p>
-<p>Create a <strong>public SSH key</strong> which will be used for connecting to the virtual server instance that we will deploy later.</p>
-<p>Within your IBM Cloud CLI or local Terminal command prompt, execute the following command to generate a public SSH key:</p>
+<p>Create a <strong>public SSH key</strong> which will be used for connecting to the virtual server instance that we will deploy later. Within your IBM Cloud CLI or local Terminal command prompt, execute the following command to generate a public SSH key:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ssh-keygen -t rsa
 </code></pre></div>
-<p>The command will generate two files— <code>id_rsa</code> and <code>id_rsa.pub</code> —which will be placed either under an .ssh directory (the exact directory address will be displayed to the command line, such as <code>/Users/.ssh/id_rsa</code>) or within the same directory that you executed the <code>ssh-key -t rsa</code> instruction from.</p>
+<p>The command will generate two files (<code>id_rsa</code> and <code>id_rsa.pub</code>) which will be placed either under an <code>.ssh</code> directory (the exact directory address will be displayed to the command line, such as <code>/Users/.ssh/id_rsa</code>) or within the same directory that you executed the <code>ssh-key -t rsa</code> instruction from.</p>
 <p>Execute the following instruction in the command line to open the current directory with your desktop file browser and look for the pair of key files:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>open .
 </code></pre></div>
@@ -643,7 +642,7 @@
 </details>
 <hr />
 <ol start="12">
-<li>Create a namespace and push the container image by running the following commands. Execute these in the <strong>SAME</strong> directory that you saved your <code>paynow-website</code> clone in Step 6 and built your Docker container image in Step 7.</li>
+<li>Create a namespace and push the container image by running the following commands. Execute these two instructions sequentially in the <strong>SAME</strong> directory that you saved your <code>paynow-website</code> clone in Step 6 and built your Docker container image in Step 7.</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>ibmcloud cr namespace-add hpvs-sample
 </code></pre></div>
@@ -662,11 +661,11 @@
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker inspect us.icr.io/hpvs-sample/paynow-website | grep -A 1 RepoDigests
 </code></pre></div>
-<p>Record the <strong>FULL</strong> print-out to a notepad. The information on your container registry will be useful at a later stage.</p>
+<p>Record the <strong>FULL</strong> print-out to a notepad. The information it contains about your container registry will be useful at a later stage of the hands-on lab.</p>
 <hr />
 <h1 id="_1"></h1>
 <h1 id="next-steps">Next Steps</h1>
-<p>At this stage, the PayNow application's container image has been prepared and is now available for use in the IBM Cloud. In the following section, you will use these tools and technologies to generate a <code>Contract</code> for creation of an HPVS instance with the IBM Hyper Protect Container Runtime (HPCR) image.</p>
+<p>At this point, the PayNow application's container image has been prepared and is now available for use in the IBM Cloud. In the following section, you will use these tools and technologies to generate a <code>Contract</code> for creation of an HPVS instance with the IBM Hyper Protect Container Runtime (HPCR) image.</p>
 
 
 

@@ -460,7 +460,7 @@
 </ol>
 <p><a href="https://cloud.ibm.com/catalog/services/logdna?callback=%2Fobserve%2Flogging%2Fcreate" target="_blank">https://cloud.ibm.com/catalog/services/logdna?callback=%2Fobserve%2Flogging%2Fcreate</a></p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure10.png" width="400" /></p>
-<p>Note that the "Lite" plan is free to use, but with limited functionality and only a 30 day window to operate before it is automatically de-provisioned. When configuring the service, use the following options:</p>
+<p>Note that the "Lite" plan is free to use, but with limited functionality and only a 30 day window to operate before it is automatically de-provisioned. Apply the following configuration options:</p>
 <ul>
 <li>
 <p><strong>Service Name</strong>: Set to a unique name of your preference.</p>
@@ -474,38 +474,38 @@
 </ul>
 <p>Confirm that you have read and agree to the license agreements, then click <strong>Create</strong> to provision.</p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure12.png" width="400" /></p>
-<p>You will need to record details about the <strong>Ingestion Host</strong> and the <strong>Ingestion ID</strong> for reference at a later step.</p>
+<p><strong>RECORD</strong> details about the <code>Ingestion Host</code> and the <code>Ingestion ID</code> for reference at a later step.</p>
 <p>They will be something similar to:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Ingestion Host: syslog-a.eu-gb.logging.cloud.ibm.com
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Ingestion ID: 9a035a6ee2f2ae77c566a543e0957ed8
 </code></pre></div></p>
-<p>Locate the Host and ID specific to your environment by performing the following:</p>
+<p>Locate the <code>Ingestion Host</code> and <code>Ingestion ID</code> specific to your environment by performing the following:</p>
 <ul>
 <li>
 <p>Click <strong>Open Dashboard</strong> from the Log Analysis service page on IBM Cloud</p>
 </li>
 <li>
 <p>In the bottom-left corner of the dashboard, click the <code>?</code> icon (for <code>Install Instructions</code>).</p>
-</li>
-</ul>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure18.png" width="400" /></p>
-<ul>
-<li>A panel to "Add Log Sources" will appear. From the left side of the panel, click to drill down into the <strong>rsyslog</strong> tab.</li>
-</ul>
+</li>
+<li>
+<p>A panel to "Add Log Sources" will appear. From the left side of the panel, click to drill down into the <strong>rsyslog</strong> tab.</p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure19.png" width="400" /></p>
-<ul>
-<li>In the top right of the page is a hidden string titled <code>Your Ingestion key is:</code>. Click the clipboard icon to the right of the string and save this value in your records as the <strong>Ingestion ID</strong>.</li>
-</ul>
+</li>
+<li>
+<p>In the top right of the page is a hidden string titled <code>Your Ingestion key is:</code>. Click the clipboard icon to the right of the string and save this value in your records as the <strong>Ingestion ID</strong>.</p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure20.png" width="400" /></p>
-<ul>
-<li>In a large grey box on-screen are the contents for the <code>/etc/rsyslog.d/22-logdna.conf</code> file. Locate the two of lines towards the bottom which read:</li>
-</ul>
+</li>
+<li>
+<p>In a large grey box on-screen are the contents for the <code>/etc/rsyslog.d/22-logdna.conf</code> file. Locate the two of lines towards the bottom which read:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Send messages to LogDNA over TCP using the template.
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>*.* @@syslog-a.us-south.logging.cloud.ibm.com:6514;LogDNAFormat
 </code></pre></div>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure21.png" width="400" /></p>
-<ul>
-<li>Your particular values will be different than the sample above. The <em>second</em> line is the one of interest to us at this time. Record <strong>YOUR</strong> unique values for the following segment: <code>syslog-a.us-south.logging.cloud.ibm.com</code> including everything between <code>syslog</code> and <code>.com</code>. Save this value in your records as the <strong>Ingestion Host</strong>.</li>
+</li>
+<li>
+<p>Your particular values will be different than the sample above. The <em>second</em> line is the one of interest to us at this time. Record <strong>YOUR</strong> unique values for the following segment: <code>syslog-a.us-south.logging.cloud.ibm.com</code> including everything between <code>syslog</code> and <code>.com</code>. Save this value in your records as the <strong>Ingestion Host</strong>.</p>
+</li>
 </ul>
 <hr />
 <ol start="3">

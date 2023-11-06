@@ -459,7 +459,8 @@
 <li>From the IBM Cloud web interface, provision a <strong>Lite plan</strong> of the <strong>IBM Log Analysis</strong> service from the following page:</li>
 </ol>
 <p><a href="https://cloud.ibm.com/catalog/services/logdna?callback=%2Fobserve%2Flogging%2Fcreate" target="_blank">https://cloud.ibm.com/catalog/services/logdna?callback=%2Fobserve%2Flogging%2Fcreate</a></p>
-<p><img alt="" loading="lazy" src="../_attachments/module2_figure10.png" width="400" /></p>
+<div class="highlight"><pre><span></span><code>![](_attachments/module2_figure10.png){: loading=lazy width=&quot;400&quot;}
+</code></pre></div>
 <p>Note that the "Lite" plan is free to use, but with limited functionality and only a 30 day window to operate before it is automatically de-provisioned. Apply the following configuration options:</p>
 <ul>
 <li>
@@ -473,12 +474,15 @@
 </li>
 </ul>
 <p>Confirm that you have read and agree to the license agreements, then click <strong>Create</strong> to provision.</p>
-<p><img alt="" loading="lazy" src="../_attachments/module2_figure12.png" width="400" /></p>
+<div class="highlight"><pre><span></span><code>![](_attachments/module2_figure12.png){: loading=lazy width=&quot;400&quot;}
+</code></pre></div>
 <p><strong>RECORD</strong> details about the <code>Ingestion Host</code> and the <code>Ingestion ID</code> for reference at a later step.</p>
-<p>They will be something similar to:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Ingestion Host: syslog-a.eu-gb.logging.cloud.ibm.com
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Ingestion ID: 9a035a6ee2f2ae77c566a543e0957ed8
-</code></pre></div></p>
+<p>They will be something similar to:</p>
+<div class="highlight"><pre><span></span><code>```
+Ingestion Host: syslog-a.eu-gb.logging.cloud.ibm.com
+Ingestion ID: 9a035a6ee2f2ae77c566a543e0957ed8
+```
+</code></pre></div>
 <p>Locate the <code>Ingestion Host</code> and <code>Ingestion ID</code> specific to your environment by performing the following:</p>
 <ul>
 <li>

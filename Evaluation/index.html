@@ -454,7 +454,7 @@
 <p>The quiz questions will ask you about on-screen text or descriptions that come up as you work through the lab guide. Answers to quiz questions can only be determined by carefully following the instructions of the hands-on lab. Sections of the lab marked as <code>OPTIONAL</code> will <strong>not</strong> be tested on as part of the quiz. You will have three attempts in total to obtain a passing grade.</p>
 </p>
 </div>
-<p><em>Note</em>: hands-on lab sections marked as <strong>OPTIONAL</strong> are <em>NOT</em> evaluated for Level 3 accreditation. IBM technical sellers are not required to include OPTIONAL sections in their Stand &amp; Deliver. Business partners will not be tested on the contents of OPTIONAL sections as part of their final quiz evaluation.</p>
+<p><em>Note</em>: hands-on lab sections marked as <strong>OPTIONAL</strong> are <em>NOT</em> evaluated for Level 3 accreditation. IBM technical sellers are not required to include optional sections in their Stand &amp; Deliver. Business partners will not be tested on the contents of optional sections as part of their final quiz evaluation.</p>
 <hr />
 <h1 id="_1"></h1>
 <h1 id="ibmer-stand-deliver-assessment"><strong>IBMer</strong> Stand &amp; Deliver Assessment</h1>
@@ -478,10 +478,10 @@
 <summary>REQUIREMENTS — HYPER PROTECT CRYPTO SERVICES (<code>HPCS</code>)</summary>
 <ol>
 <li>
-<p>Articulate the value of IBM Cloud Hyper Protect Crypto Services with Unified Key Orchestrator in a way that relates to the client's current needs and pain point(s). Especially:</p>
+<p>Articulate the value of HPCS with Unified Key Orchestrator in a way that relates to a client's current needs and pain point(s). Especially:</p>
 <ul>
 <li>
-<p>The need to protect data with encryption keys which are under client control to enhance data security, data privacy, and data sovereignty — as well as compliance posture for regulated clients.</p>
+<p>The need to protect data with encryption keys which are under client control to enhance data security, data privacy, and data sovereignty — as well as compliance posture for regulated clients</p>
 </li>
 <li>
 <p>The differences in security posture of the different available key management options across cloud (i.e. CSP managed encryption, BYOK, HYOK &amp; KYOK.) Explain the concepts of key vaults, key stores, and keys within the service UI on cloud.ibm.com</p>
@@ -489,31 +489,31 @@
 </ul>
 </li>
 <li>
-<p>Demonstrate the following features of IBM Cloud Hyper Protect offerings:</p>
+<p>Demonstrate the following features of HPCS:</p>
 <ul>
 <li>
-<p>How to provision a new service instance of HPCS, the major difference of the standard and the unified key orchestration (UKO) plan (IBM Cloud only and Multi Cloud capabilities) and explain how pricing is set-up</p>
+<p>Explain how to provision a new service instance of HPCS, the major differences between the standard and the unified key orchestration (UKO) plan, and how pricing is calculated</p>
 </li>
 <li>
-<p>Show what a Key Vault is and how it can be used and useful for teams across an organisation with Role Based Access Control (RBAC)</p>
+<p>Explain what a Key Vault is and how Role Based Access Control (RBAC) can be valuable for coordination across different teams of an organization</p>
 </li>
 <li>
-<p>Show what a KeyStore is and how you would set it up (without setting it up as Secrets needed for this should not be shared in a demo)</p>
+<p>Show what a KeyStore is and how a client would set it up</p>
 </li>
 <li>
-<p>Show how to create a key &amp; push a key to an already set AWS KeyStore</p>
+<p>Show how to create a Key and push a key to an existing AWS KeyStore</p>
 </li>
 <li>
-<p>Show how to encrypt data in an S3 Bucket in AWS with a key created in UKO</p>
+<p>Show how to encrypt data in an AWS S3 bucket with a key created in UKO</p>
 </li>
 <li>
-<p>Show how to manage that key and use the control you would have as a cloud customer over that key by deactivating the key</p>
+<p>Show how to manage a UKO-created key and demonstrate the control clients have by deactivating the key</p>
 </li>
 <li>
-<p>Show the impact of deactivating the key in IBM Cloud HPCS with UKO on access to data in AWS Storage: expected outcome: encrypted object in the S3 storage is not accessible anymore. Explain how that enhanced the control and therefore security posture of the User.</p>
+<p>Show the resulting impact on data access (in AWS S3) from deactivating the key. Explain how this enhances the control and security posture of the client.</p>
 </li>
 <li>
-<p>Show how to activate the key again &amp; how that makes the encrypted objects in AWS S3 Service available to use again, as it can be decrypted. Explain that this is also a risk mitigation, in case a Key in AWS gets lost or stolen, as it is securely backed up in IBM Cloud.</p>
+<p>Show how to reactivate the key and how this makes encrypted objects in AWS S3 Service available to use again (now that it can be decrypted.) Explain how this also provides risk mitigation in cases where an AWS S3 key becomes lost or stolen, as the key remains securely backed up in IBM Cloud.</p>
 </li>
 </ul>
 </li>
@@ -523,7 +523,7 @@
 <summary>REQUIREMENTS — HYPER PROTECT VIRTUAL SERVERS (<code>HPVS</code>)</summary>
 <ol start="3">
 <li>
-<p>Articulate the value of IBM Cloud Hyper Protect Virtual Servers in a way that relates to current client needs and/or pain point(s). Especially:</p>
+<p>Articulate the value of HPVS in a way that relates to a client's current needs and pain point(s). Especially:</p>
 <ul>
 <li>
 <p>The need to protect data in use</p>
@@ -532,21 +532,21 @@
 <p>Explain the concept of Confidential Compute and the benefits, including how Hyper Protect Virtual Servers for VPC spins up a Confidential Compute Environment to run fully protected containerized workloads</p>
 </li>
 <li>
-<p>The value of having Technical Assurance in IBM Cloud and how that helps to minimize attack vectors and enhance total data privacy assurance</p>
+<p>The value of having Technical Assurance in IBM Cloud and how that helps to minimize attack vectors</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Demonstrate the following features of IBM Cloud Hyper Protect offerings:</p>
+<p>Demonstrate the following features of HPVS:</p>
 <ul>
 <li>
-<p>How to use Terraform to create a contract to deploy the containerized workload of the sample “PayNow” Application into Hyper Protect Virtual Server for VPC</p>
+<p>How to use Terraform to create a contract to deploy the containerized workload of the sample “PayNow” application into HPVS</p>
 </li>
 <li>
 <p>Explain the different parts of a contract and what a contract is used for</p>
 </li>
 <li>
-<p>Show how to find Hyper Protect Virtual Servers for VPC in IBM Cloud and set the correct variables on the service creation page to enable Confidential Compute</p>
+<p>Show how to find HPVS in IBM Cloud and set the correct variables on the service creation page to enable Confidential Compute</p>
 </li>
 <li>
 <p>Explain (while doing so) the benefits of leveraging Secure Execution based on IBM Z (security based on trust in hardware = technical assurance) for Confidential Compute</p>
@@ -560,7 +560,7 @@
 </ul>
 </li>
 <li>
-<p><em>(OPTIONAL): If you choose to deploy a live application environment in your personal IBM Cloud account:</em></p>
+<p><em>(OPTIONAL): If you choose to deploy a live application of combined HPCS and HPVS environments to your personal IBM Cloud account:</em></p>
 <ul>
 <li>
 <p><em>Create the instance to deploy the Confidential Container based on the variables in the contract</em></p>

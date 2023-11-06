@@ -445,12 +445,12 @@
 
 <h1 id="creation-of-a-contract-for-paynow-application-via-terraform">Creation of a Contract for PayNow Application via Terraform</h1>
 <hr />
-<p>In this module, you will use these tools and technologies to generate a <code>Contract</code> for creation of an HPVS instance with the IBM Hyper Protect Container Runtime (HPCR) image.</p>
+<p>In this module, you will generate a <code>Contract</code> needed for the creation of an HPVS instance using the IBM Hyper Protect Container Runtime (HPCR) image.</p>
 <hr />
 <ol>
 <li>Install the <strong>OpenSSL binary</strong> on your local machine. More information about the OpenSSL Project can be found within their online documentation: <a href="https://www.openssl.org" target="_blank">https://www.openssl.org</a></li>
 </ol>
-<p>To install OpenSSL, either read the instructions detailed here (<a href="https://www.openssl.org/source/gitrepo.html" target="_blank">https://www.openssl.org/source/gitrepo.html</a>) or execute the following commands one at a time in your command line interface:</p>
+<p>To install OpenSSL, either read the instructions detailed here (<a href="https://www.openssl.org/source/gitrepo.html" target="_blank">https://www.openssl.org/source/gitrepo.html</a>) or execute the following commands, one at a time, in your command line interface:</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone git://git.openssl.org/openssl.git
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span> openssl
@@ -491,7 +491,7 @@
 </code></pre></div>
 <hr />
 <ol start="5">
-<li>Edit the <code>docker-compose.yml</code> file in the <code>/compose</code> folder. You need to specify <strong>YOUR</strong> container image digest (<strong>Step 12</strong> of the previous module) and set the exposed ports to the following. Delete any other lines that were included in the original YAML file by default.</li>
+<li>Edit the <code>docker-compose.yml</code> file in the <code>/compose</code> folder. You need to specify <strong>YOUR</strong> container image digest (<strong>Step 12</strong> of the <a href="https://ibm.github.io/HyperProtectServicesL3/HPVS/02-Prerequites-and-Preparation/" target="_blank">previous module</a>) and set the exposed ports to the following. Delete any other lines that were included in the original YAML file by default.</li>
 </ol>
 <p>Replicate the following example of a completed <code>docker-compose.yml</code> file. On <strong>Line 4</strong> for the argument <code>image:</code>, replace the <em>last</em> <code>&lt;sha256&gt;</code> characters with your container image digest:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
@@ -529,16 +529,16 @@
 <p>Adjust the following values:</p>
 <ul>
 <li>
-<p><em>Line 1</em>: Replace <code>&lt;your container registry&gt;</code> with the first component of the container registry digest you recorded in Step 13 of the Prerequisites module. Likely this is a value such as <code>us.icr.io</code> Preserve the double-quotation marks.</p>
+<p><em>Line 1</em>: Replace <code>&lt;your container registry&gt;</code> with the first component of the container registry digest you recorded in Step 13 of the <a href="https://ibm.github.io/HyperProtectServicesL3/HPVS/02-Prerequites-and-Preparation/" target="_blank">Prerequisites</a> module. Likely this is a value such as <code>us.icr.io</code> Preserve the double-quotation marks.</p>
 </li>
 <li>
-<p><em>Line 3</em>: Replace <code>&lt;your API key&gt;</code> with the contents of the <code>key.pub</code> SSH key that you created and stored locally in Step 8 of the Prerequisites module. Preserve the double-quotation marks.</p>
+<p><em>Line 3</em>: Replace <code>&lt;your API key&gt;</code> with the contents of the <code>key.pub</code> SSH key that you created and stored locally in Step 8 of the <a href="https://ibm.github.io/HyperProtectServicesL3/HPVS/02-Prerequites-and-Preparation/" target="_blank">Prerequisites</a> module. Preserve the double-quotation marks.</p>
 </li>
 <li>
-<p><em>Line 4</em>: Replace <code>&lt;your ingestion key&gt;</code> with the <strong>Ingestion Key</strong> recorded in Step 2 of the Prerequisites module. This is likely a value similar to <code>a17b8b912bcddda9d84d544d82a74c50</code>. Preserve the double-quotation marks.</p>
+<p><em>Line 4</em>: Replace <code>&lt;your ingestion key&gt;</code> with the <strong>Ingestion Key</strong> recorded in Step 2 of the <a href="https://ibm.github.io/HyperProtectServicesL3/HPVS/02-Prerequites-and-Preparation/" target="_blank">Prerequisites</a> module. This is likely a value similar to <code>a17b8b912bcddda9d84d544d82a74c50</code>. Preserve the double-quotation marks.</p>
 </li>
 <li>
-<p><em>Line 5</em>: Replace <code>&lt;your ingestion host&gt;</code> with the <strong>Ingestion Host</strong> recorded in Step 2 of the Prerequisites module. This is likely a value similar to <code>syslog-a.us-south.logging.cloud.ibm.com</code>. Preserve the double-quotation marks.</p>
+<p><em>Line 5</em>: Replace <code>&lt;your ingestion host&gt;</code> with the <strong>Ingestion Host</strong> recorded in Step 2 of the <a href="https://ibm.github.io/HyperProtectServicesL3/HPVS/02-Prerequites-and-Preparation/" target="_blank">Prerequisites</a> module. This is likely a value similar to <code>syslog-a.us-south.logging.cloud.ibm.com</code>. Preserve the double-quotation marks.</p>
 </li>
 </ul>
 <p>When satisfied, save the changes and exit the file.</p>

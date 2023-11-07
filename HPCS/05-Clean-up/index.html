@@ -454,12 +454,34 @@
 <h1 id="ibmers-before-wiping-your-environment-we-recommend-taking-the-time-to-rehearse-and-record-your-stand-and-deliver-presentation"><strong>IBMers</strong>: Before wiping your environment, we recommend taking the time to rehearse and record your <em>Stand and Deliver</em> presentation.</h1>
 <p>As a reminder, in the IBM Cloud HPCS environment you should:</p>
 <ol>
+<li>Deactivate the encryption keys you have created using UKO.</li>
+</ol>
+<ul>
 <li>
-<p>Deactivate the encryption keys you have created using UKO.</p>
+<p>Return to the IBM Cloud dashboard and drill down into the <strong>HPCS UKO</strong> instance as done previously.</p>
 </li>
 <li>
-<p>Destroy these IBM Cloud keys once they have been deactivated. This will permanently remove them from the IBM Cloud environment.</p>
+<p>From the HPCS UKO dashboard, navigate using the left-hand interface into <strong>Vaults</strong> &gt; <strong>Managed Keys</strong>.</p>
 </li>
+<li>
+<p>The table of Managed Keys will contain multiple entries. Locate the row corresponding to the custom key that <strong>YOU</strong> created earlier (<code>demo-video-key</code> in the screenshot below).</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/module1_figure23.png" width="600" /></p>
+</li>
+<li>
+<p>To the far right of the row entry for your <strong>custom key</strong>, click the three stacked dots icon and then use the drop-down menu to <strong>Change state to:</strong> a value of <code>Destroyed</code>.</p>
+</li>
+<li>
+<p>A prompt will appear: <code>Are you sure you want to change the state of the key to destroyed?</code> which you can confirm by checking the box affirming you understand the key will be permanently destroyed and then clicking the red <strong>Destroy key</strong> button.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/module1_figure24.png" width="600" /></p>
+</li>
+</ul>
+<p>!!! warning "DO NOT DELETE <code>TechZone-UKO-Key</code> or <code>UKO-Azure-Test-Key</code>
+    Only delete the unique key that <strong>YOU</strong> authored in previous steps of this lab.</p>
+<hr />
+<ol start="2">
+<li>Destroy these IBM Cloud keys once they have been deactivated. This will permanently remove them from the IBM Cloud environment.</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">DO NOT DELETE KEYS IN THE AWS ENVIRONMENT</p>

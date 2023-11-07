@@ -505,10 +505,9 @@
 </li>
 <li>
 <p>Repeat the same reservation <strong>Steps 2 through 6</strong> for the <code>AWS Account Access</code> instance. You will need to wait for both instances (IBM HPCS and AWS) to finish provisioning through the <a href="https://techzone.ibm.com/my/reservations" target="_blank"><strong>My Reservations</strong></a> tab of the ITZ before continuing with the lab.</p>
-<p><br/>
-<img alt="" src="../_attachments/module1_figure5.png" /></p>
 </li>
 </ol>
+<p><img alt="" src="../_attachments/module1_figure5.png" /></p>
 <hr />
 <h1 id="_1"></h1>
 <h1 id="accessing-the-hpcs-and-aws-environments">Accessing the HPCS and AWS environments</h1>
@@ -527,19 +526,26 @@
 </li>
 <li>
 <p>Once authenticated and logged in, look for a drop-down in the top-right corner of the IBM Cloud interface and click it to toggle between different Organizations / Resource Groups. You should see <code>ITZ V2</code> listed, potentially alongside multiple others. Click the <code>ITZ V2</code> group and wait for the browser to refresh.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/module1_figure7.png" width="600" /></p>
 </li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/module1_figure7.png" width="600" /></p>
 <hr />
 <ol start="11">
-<li>From the left-hand interface, click the <strong>Resource List</strong> icon (three stacked and bulleted lines) and drill down into the <strong>Security</strong> row. You should see an HPCS instance similar to the one shown in the following screenshot.</li>
+<li>
+<p>From the left-hand interface, click the <strong>Resource List</strong> icon (three stacked and bulleted lines) and drill down into the <strong>Security</strong> row. You should see an HPCS instance similar to the one shown in the following screenshot.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/module1_figure8.png" width="600" /></p>
+</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/module1_figure8.png" width="600" /></p>
 <hr />
 <ol start="12">
-<li>For retrieving the <strong>AWS Account Access</strong> that was requested in Step 7, return to your email inbox and look for an email stating that the AWS environment is ready (similar to the screenshot provided below). Record the <code>AWS Access Group</code>, <code>AWS SSO User Portal URL</code>, and <code>Desktop</code> details provided in the note. Alternatively, you can always retrieve this information from the <a href="https://techzone.ibm.com/my/reservations" target="_blank"><strong>My Reservations</strong></a> tab of the ITZ.</li>
+<li>
+<p>For retrieving the <strong>AWS Account Access</strong> that was requested in Step 7, return to your email inbox and look for an email stating that the AWS environment is ready (similar to the screenshot provided below). Record the <code>AWS Access Group</code>, <code>AWS SSO User Portal URL</code>, and <code>Desktop</code> details provided in the note. Alternatively, you can always retrieve this information from the <a href="https://techzone.ibm.com/my/reservations" target="_blank"><strong>My Reservations</strong></a> tab of the ITZ.</p>
+<p><br/>
+<img alt="" loading="lazy" src="../_attachments/module1_figure9.png" width="600" /></p>
+</li>
 </ol>
-<p><img alt="" loading="lazy" src="../_attachments/module1_figure9.png" width="600" /></p>
 <hr />
 <ol start="13">
 <li>
@@ -564,11 +570,11 @@
 <p>From the drop-down in the top-right corner of the AWS dashboard, ensure that the <strong>US East (N. Virginia)</strong> region is selected. It should be set to this region by default.</p>
 </li>
 </ol>
-<p><img alt="" src="../_attachments/module1_figure12.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">CAUTION — DO NOT MODIFY</p>
 <p><strong>Do not modify or delete this key.</strong> If the key does not appear, verify that the <code>US East (N. Virginia)</code> region was selected in Step 17. If the key is still missing, reach out to the author of this documentation.</p>
 </div>
+<p><img alt="" src="../_attachments/module1_figure12.png" /></p>
 <ol start="18">
 <li>Drill down into <strong>Key Management Service</strong> &gt; <strong>Customer-managed keys</strong>: confirm that under the <em>Aliases</em> column is a key labelled <code>TechZone-UKO-Key</code>.</li>
 </ol>

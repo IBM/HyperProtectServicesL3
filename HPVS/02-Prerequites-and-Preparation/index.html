@@ -485,26 +485,26 @@
 <p>Click <strong>Open Dashboard</strong> from the Log Analysis service page on IBM Cloud</p>
 </li>
 <li>
-<p>In the bottom-left corner of the dashboard, click the circular <code>?</code> icon (for <code>Install Instructions</code>).</p>
+<p>In the bottom-left corner, click the circular <code>?</code> icon (for <code>Install Instructions</code>).</p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure18.png" width="400" /></p>
 </li>
 <li>
-<p>A panel to "Add Log Sources" will appear. From the left side of the panel, click to drill down into the <strong>rsyslog</strong> tab.</p>
+<p>A panel to <code>Add Log Sources</code> will appear. From the left side of the panel, click to drill down into the <strong>rsyslog</strong> tab.</p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure19.png" width="400" /></p>
 </li>
 <li>
-<p>In the top right of the page is a hidden string titled <code>Your Ingestion key is:</code>. Click the clipboard icon to the right of the string and save this value in your records as the <strong>Ingestion ID</strong>.</p>
+<p>In the top right of the page is a hidden string titled <code>Your Ingestion key is:</code> — click the clipboard icon to the right of the string to copy the value to your clipboard. Record this value in your records for later reference as the <strong>Ingestion ID</strong>.</p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure20.png" width="400" /></p>
 </li>
 <li>
-<p>In a large grey box on-screen are the contents for the <code>/etc/rsyslog.d/22-logdna.conf</code> file. Locate the two of lines towards the bottom which read:</p>
+<p>In a large grey box on-screen are the contents for the <code>/etc/rsyslog.d/22-logdna.conf</code> file. Locate the following two lines towards the bottom, which read:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Send messages to LogDNA over TCP using the template.
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>*.* @@syslog-a.us-south.logging.cloud.ibm.com:6514;LogDNAFormat
 </code></pre></div>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure21.png" width="400" /></p>
 </li>
 <li>
-<p>Your particular values will be different than the sample above. The <em>second</em> line is the one of interest to us at this time. Record <strong>YOUR</strong> unique values for the following segment: <code>syslog-a.us-south.logging.cloud.ibm.com</code> including everything between <code>syslog</code> and <code>.com</code>. Save this value in your records as the <strong>Ingestion Host</strong>.</p>
+<p><em>Your</em> particular values will be different than the sample above. The <strong>second</strong> line is the one of interest to us at this time. Record <em>your</em> unique values for the following segment: <code>syslog-a.us-south.logging.cloud.ibm.com</code> including everything between <code>syslog</code> and <code>.com</code>. Save this value in your records for later reference as the <strong>Ingestion Host</strong>.</p>
 </li>
 </ul>
 <hr />
@@ -522,7 +522,7 @@
 <p>Alternatively, use the <code>brew</code> package manager to install Docker on your local machine. This will be required for connecting to the IBM Cloud Container Registry.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>brew install docker
 </code></pre></div>
-<p>Follow the prompts until the installation has concluded, then continue with the lab guide instructions.</p>
+<p>Follow the prompts until the installation concludes, then continue with the lab instructions.</p>
 <details class="warning">
 <summary>DOCKER DESKTOP MUST BE RUNNING</summary>
 <p>After installation, ensure that the Docker Desktop service is running on your machine (check the taskbar or launch the application manually). Otherwise, you will encounter errors in <strong>Step 7</strong> when trying to compile the <code>PayNow</code> container image.</p>
@@ -651,13 +651,14 @@
 <p>Wait until all of the components have successfully been pushed to the IBM Cloud repository, then continue with the lab instructions.</p>
 <hr />
 <ol start="13">
-<li>Once complete, the Terminal console will report back with a <code>RepoDigests</code> value. <strong>RECORD</strong> the output in your notes.</li>
+<li>Once complete, the Terminal console will report back with a <code>RepoDigests</code> value.</li>
 </ol>
+<p><strong>RECORD</strong> the output in your notes.</p>
 <p><img alt="" loading="lazy" src="../_attachments/module2_figure15.png" width="400" /></p>
 <p>This value will be referenced again later in the lab guide.</p>
 <hr />
 <ol start="14">
-<li>If you need to retrieve the digest value at a later time, you can do so by executing the following command:</li>
+<li>If you need to retrieve the digest value at a later time, do so by executing the following command:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker inspect us.icr.io/hpvs-sample/paynow-website | grep -A 1 RepoDigests
 </code></pre></div>
